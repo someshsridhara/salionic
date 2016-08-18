@@ -1,0 +1,12 @@
+   <ion-view view-title="My Tasks">
+   <ion-content ng-controller="ListCtrl">
+    <div class="padding">
+        <div class="list">
+          <div class="item" ng-repeat="task in tasks">
+            <h2>{{task.id}}</h2>
+            <h2>{{task.title}}</h2>
+          </div>
+        </div>
+    </div>
+   </ion-content>
+   </ion-view>
