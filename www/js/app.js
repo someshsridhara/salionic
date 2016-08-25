@@ -2,39 +2,76 @@
 
 var app = angular.module('sallogger', ['ionic'])
 
-var count1 = 0;
-var count2 = 0;
-var count3 = 0;
-var count4 = 0;
-var count5 = 0;
+app.config(function($stateProvider, $urlRouterProvider) {
+
+  $stateProvider.state('list', {
+    url: '/list' ,
+    templateUrl: 'templates/list.html'
+
+  });
+
+  $stateProvider.state('edit', {
+    url: '/edit',
+    templateUrl: 'templates/edit.html',
+    controller: 'EditCtrl'
+
+  });
+
+  $urlRouterProvider.otherwise('/list');
+
+});
 
 var tasks = [
     {
       id:'1',
       title: 'Task 1',
-      count: 0
+      count: 0,
+      target: 0
     },
     {
       id:'2',
       title: 'Task 2',
-      count: 0
+      count: 0,
+      target: 0
     },
     {
       id:'3',
       title: 'Task 3',
-      count: 0
+      count: 0,
+      target: 0
     },
     {
       id:'4',
       title: 'Task 4',
-      count: 0
+      count: 0,
+      target: 0
     },
     {
       id:'5',
       title: 'Task 5',
-      count: 0
+      count: 0,
+      target:0
     }
   ];
+
+  function getTask(taskId){
+    for(var i=0; i < tasks.length; i++){
+      if(tasks[i].id == taskId){
+        return tasks[i];
+      }
+
+    }
+    return undefined;
+  }
+
+  function updateTask(task){
+    for(var i=0; i < tasks.length; i++){
+      if(tasks[i].id == task.id){
+        tasks[i] = task;
+        return;
+      }
+    }
+  }
 
 app.controller('ListCtrl', function($scope){
 
@@ -64,6 +101,19 @@ app.controller('ListCtrl', function($scope){
   }
 
  }
+
+});
+
+app.controller('EditCtrl', function($scope, $state){
+
+$scope.tasks = tasks;
+
+$scope.save = function(){
+
+  tasks = $scope.tasks;
+
+  $state.go('list');
+}
 
 });
 

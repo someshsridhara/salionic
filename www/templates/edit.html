@@ -1,0 +1,25 @@
+<ion-view view-title="Edit Task">
+    <ion-content>
+
+        <div class="list card">
+                <div ng-repeat="task in tasks">
+                    <label class="item item-input item-divider">
+                        <input type="text" class="task-title" ng-model="task.title"/>
+                        <span class="input-label task-title-span">Edit</span>
+
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Enter target count</span>
+                        <input class="text-center input-border" type="number" ng-model="task.target">
+                    </label>
+                </div>
+        </div>
+        <div class="padding">
+            <button class="button button-block button-positive">Add Task</button>
+        </div>
+        <div class="padding">
+            <button class="button button-block button-positive" ng-click="save(tasks)">Save</button>
+        </div>
+
+    </ion-content>
+</ion-view>

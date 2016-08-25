@@ -13,3 +13,18 @@
 .tasks {
     background-color: #EEEEEE;
 }
+
+.task-title-span {
+    font-size: 0.8em;
+    color: #D1D1D1;
+}
+
+.task-title {
+    font-size: 1em !important;
+}
+
+.input-border {
+    border: 1px solid black !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
