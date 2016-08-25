@@ -3,10 +3,10 @@
           <div class="list">
             <div class="padding"></div>
              <div class="row" ng-repeat="task in tasks">
-              <div class="item task-height item-icon-right padding col-75 tasks" ng-click="logTask(task.id)" >
-                <div class="text-left padding"><h2>{{task.title}}</h2></div>
-                <div class="text-center padding">{{task.count}}/{{task.target}}</div>
-              </div>
+                  <div class="item task-height item-icon-right padding col-75 tasks" ng-click="logTask(task.id)" >
+                    <div class="text-left padding"><h2>{{task.title}}</h2></div>
+                    <div class="text-center padding">{{task.count}}/{{task.target}}</div>
+                  </div>
               <div ng-click="undoTask(task.id)" class="button icon ion-ios-undo col"><h5>Undo</h5></div>
             </div>
           </div>
