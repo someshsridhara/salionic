@@ -12,6 +12,7 @@
 
 .tasks {
     background-color: #EEEEEE;
+    padding: 0px;
 }
 
 .task-title-span {
@@ -29,3 +30,16 @@
     margin-right: 10px !important;
 }
 
+.task-wrapper {
+    background-color: #2ecc71;
+    width: 100%;
+    height:100%;
+    position: absolute;
+    z-index: 5;
+
+}
+
+.task-z-index {
+    z-index: 10;
+    position: relative;
+}

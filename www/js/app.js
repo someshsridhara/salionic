@@ -26,31 +26,31 @@ var tasks = [
       id:'1',
       title: 'Task 1',
       count: 0,
-      target: 0
+      target: 5
     },
     {
       id:'2',
       title: 'Task 2',
       count: 0,
-      target: 0
+      target: 5
     },
     {
       id:'3',
       title: 'Task 3',
       count: 0,
-      target: 0
+      target: 5
     },
     {
       id:'4',
       title: 'Task 4',
       count: 0,
-      target: 0
+      target: 5
     },
     {
       id:'5',
       title: 'Task 5',
       count: 0,
-      target:0
+      target: 5
     }
   ];
 
@@ -77,6 +77,8 @@ app.controller('ListCtrl', function($scope){
 
  $scope.tasks = tasks;
 
+ var widthColor
+
  $scope.logTask = function(id){
 
   //console.log(id);
@@ -84,11 +86,30 @@ app.controller('ListCtrl', function($scope){
 
     if(tasks[i].id == id){
        tasks[i].count++;
-       console.log(tasks[i].count)
+      }
     }
   }
 
- };
+  $scope.changeWidth = function(id){
+
+      for(var i=0; i < tasks.length; i++){
+
+          if(tasks[i].id == id){
+             widthColor = tasks[i].count / tasks[i].target;
+             console.log(widthColor);
+             widthColor = widthColor * 100;
+
+            return {
+
+            'width' : widthColor + "%",
+            'transition': 'width 1s'
+
+            };
+          }
+      }
+
+  }
+
 
  $scope.undoTask = function(id){
 

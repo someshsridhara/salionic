@@ -1,12 +1,18 @@
       <ion-view view-title="My Tasks">
         <ion-content ng-controller="ListCtrl">
           <div class="list">
-            <div class="padding"></div>
+
              <div class="row" ng-repeat="task in tasks">
-                  <div class="item task-height item-icon-right padding col-75 tasks" ng-click="logTask(task.id)" >
-                    <div class="text-left padding"><h2>{{task.title}}</h2></div>
-                    <div class="text-center padding">{{task.count}}/{{task.target}}</div>
-                  </div>
+                <!-- <div class="col-75 change-color"> -->
+
+                  <div id="task" class="item task-height item-icon-right padding col-75 tasks" ng-click="logTask(task.id)" >
+                    <div class="task-wrapper" ng-style="changeWidth(task.id)"></div>
+                    <div class="text-left padding task-z-index"><h2>{{task.title}}</h2></div>
+                    <div class="text-center padding task-z-index">{{task.count}}/{{task.target}}</div>
+                    </div>
+
+
+                <!-- </div> -->
               <div ng-click="undoTask(task.id)" class="button icon ion-ios-undo col"><h5>Undo</h5></div>
             </div>
           </div>
